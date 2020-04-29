@@ -69,9 +69,9 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
     _this.state = {
       focusedRange: [(0, _utils.findNextRangeIndex)(props.ranges), 0]
     };
-    _this.styles = (0, _utils.generateStyles)([_styles["default"], props.classNames]); // this.applyFunc = props.applyFunc ? props.applyFunc : null;
-    // this.cancelFunc = props.cancelFunc ? props.cancelFunc : null;
-
+    _this.styles = (0, _utils.generateStyles)([_styles["default"], props.classNames]);
+    _this.applyFunc = props.applyFunc ? props.applyFunc : null;
+    _this.cancelFunc = props.cancelFunc ? props.cancelFunc : null;
     return _this;
   }
 
@@ -97,7 +97,7 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
       var focusedRange = this.state.focusedRange;
       return /*#__PURE__*/_react["default"].createElement("div", {
         className: this.props.className
-      }, /*#__PURE__*/_react["default"].createElement("table", null, /*#__PURE__*/_react["default"].createElement("th", null, /*#__PURE__*/_react["default"].createElement("div", {
+      }, /*#__PURE__*/_react["default"].createElement("table", null, /*#__PURE__*/_react["default"].createElement("tbody", null, /*#__PURE__*/_react["default"].createElement("tr", null, /*#__PURE__*/_react["default"].createElement("td", null, /*#__PURE__*/_react["default"].createElement("div", {
         className: (0, _classnames["default"])(this.styles.dateRangePickerWrapper)
       }, /*#__PURE__*/_react["default"].createElement(_DefinedRange["default"], _extends({
         focusedRange: focusedRange,
@@ -119,7 +119,7 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
           return _this2.dateRange = t;
         },
         className: undefined
-      })))), /*#__PURE__*/_react["default"].createElement("tr", null, /*#__PURE__*/_react["default"].createElement("td", null, /*#__PURE__*/_react["default"].createElement("div", {
+      }))))), /*#__PURE__*/_react["default"].createElement("tr", null, /*#__PURE__*/_react["default"].createElement("td", null, /*#__PURE__*/_react["default"].createElement("div", {
         className: "buttons",
         style: {
           "float": 'right',
@@ -129,7 +129,7 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
         onClick: this.onCancel.bind(this)
       }, "Cancel"), /*#__PURE__*/_react["default"].createElement("button", {
         onClick: this.onApply.bind(this)
-      }, "Apply"))))));
+      }, "Apply")))))));
     }
   }]);
 
