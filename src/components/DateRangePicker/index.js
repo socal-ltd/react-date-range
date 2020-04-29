@@ -30,26 +30,34 @@ class DateRangePicker extends Component {
     const { focusedRange } = this.state;
     return (
       <div className={this.props.className}>
-        <div className={classnames(this.styles.dateRangePickerWrapper)}>
-          <DefinedRange
-            focusedRange={focusedRange}
-            onPreviewChange={value => this.dateRange.updatePreview(value)}
-            {...this.props}
-            range={this.props.ranges[focusedRange[0]]}
-            className={undefined}
-          />
-          <DateRange
-            onRangeFocusChange={focusedRange => this.setState({ focusedRange })}
-            focusedRange={focusedRange}
-            {...this.props}
-            ref={t => (this.dateRange = t)}
-            className={undefined}
-          />
-        </div>
-        <div className="buttons" style={{ float: 'right', margin: '10px' }}>
-          <button onClick={this.onCancel.bind(this)}>Cancel</button>
-          <button onClick={this.onApply.bind(this)}>Apply</button>
-        </div>
+        <table>
+          <th>
+            <div className={classnames(this.styles.dateRangePickerWrapper)}>
+              <DefinedRange
+                focusedRange={focusedRange}
+                onPreviewChange={value => this.dateRange.updatePreview(value)}
+                {...this.props}
+                range={this.props.ranges[focusedRange[0]]}
+                className={undefined}
+              />
+              <DateRange
+                onRangeFocusChange={focusedRange => this.setState({ focusedRange })}
+                focusedRange={focusedRange}
+                {...this.props}
+                ref={t => (this.dateRange = t)}
+                className={undefined}
+              />
+            </div>
+          </th>
+          <tr>
+            <td>
+              <div className="buttons" style={{ float: 'right', margin: '10px' }}>
+                <button onClick={this.onCancel.bind(this)}>Cancel</button>
+                <button onClick={this.onApply.bind(this)}>Apply</button>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
     );
   }
