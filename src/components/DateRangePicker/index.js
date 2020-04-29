@@ -13,21 +13,15 @@ class DateRangePicker extends Component {
       focusedRange: [findNextRangeIndex(props.ranges), 0]
     };
     this.styles = generateStyles([coreStyles, props.classNames]);
-    this.applyFunc = props.applyFunc ? props.applyFunc : null;
-    this.cancelFunc = props.cancelFunc ? props.cancelFunc : null;
+    // this.applyFunc = props.applyFunc ? props.applyFunc : null;
+    // this.cancelFunc = props.cancelFunc ? props.cancelFunc : null;
   }
   onApply() {
-    console.log('onApplyPressed');
-    console.log(`applyfunc: ${this.applyFunc}`);
-    console.log(`state: ${this.state}`);
     if (this.applyFunc) {
       this.applyFunc();
     }
   }
   onCancel() {
-    console.log('onCancelPressed');
-    console.log(`cancelfunc: ${this.cancelFunc}`);
-    console.log(`state: ${this.state}`);
     if (this.cancelFunc) {
       this.cancelFunc();
     }
@@ -53,8 +47,8 @@ class DateRangePicker extends Component {
           />
         </div>
         <div className="buttons" style={{ float: 'right', margin: '10px' }}>
-          <button onClick={this.onCancel}>Cancel</button>
-          <button onClick={this.onApply}>Apply</button>
+          <button onClick={this.onCancel.bind(this)}>Cancel</button>
+          <button onClick={this.onApply.bind(this)}>Apply</button>
         </div>
       </div>
     );

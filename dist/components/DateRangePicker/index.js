@@ -69,19 +69,15 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
     _this.state = {
       focusedRange: [(0, _utils.findNextRangeIndex)(props.ranges), 0]
     };
-    _this.styles = (0, _utils.generateStyles)([_styles["default"], props.classNames]);
-    _this.applyFunc = props.applyFunc ? props.applyFunc : null;
-    _this.cancelFunc = props.cancelFunc ? props.cancelFunc : null;
+    _this.styles = (0, _utils.generateStyles)([_styles["default"], props.classNames]); // this.applyFunc = props.applyFunc ? props.applyFunc : null;
+    // this.cancelFunc = props.cancelFunc ? props.cancelFunc : null;
+
     return _this;
   }
 
   _createClass(DateRangePicker, [{
     key: "onApply",
     value: function onApply() {
-      console.log('onApplyPressed');
-      console.log("applyfunc: ".concat(this.applyFunc));
-      console.log("state: ".concat(this.state));
-
       if (this.applyFunc) {
         this.applyFunc();
       }
@@ -89,10 +85,6 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
   }, {
     key: "onCancel",
     value: function onCancel() {
-      console.log('onCancelPressed');
-      console.log("cancelfunc: ".concat(this.cancelFunc));
-      console.log("state: ".concat(this.state));
-
       if (this.cancelFunc) {
         this.cancelFunc();
       }
@@ -134,9 +126,9 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
           margin: '10px'
         }
       }, /*#__PURE__*/_react["default"].createElement("button", {
-        onClick: this.onCancel
+        onClick: this.onCancel.bind(this)
       }, "Cancel"), /*#__PURE__*/_react["default"].createElement("button", {
-        onClick: this.onApply
+        onClick: this.onApply.bind(this)
       }, "Apply")));
     }
   }]);
