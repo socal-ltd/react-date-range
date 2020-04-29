@@ -78,6 +78,10 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
   _createClass(DateRangePicker, [{
     key: "onApply",
     value: function onApply() {
+      console.log('onApplyPressed');
+      console.log("applyfunc: ".concat(this.applyFunc));
+      console.log("state: ".concat(this.state));
+
       if (this.applyFunc) {
         this.applyFunc();
       }
@@ -85,6 +89,10 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
   }, {
     key: "onCancel",
     value: function onCancel() {
+      console.log('onCancelPressed');
+      console.log("cancelfunc: ".concat(this.cancelFunc));
+      console.log("state: ".concat(this.state));
+
       if (this.cancelFunc) {
         this.cancelFunc();
       }
@@ -96,9 +104,9 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
 
       var focusedRange = this.state.focusedRange;
       return /*#__PURE__*/_react["default"].createElement("div", {
-        className: "Container"
+        className: this.props.className
       }, /*#__PURE__*/_react["default"].createElement("div", {
-        className: (0, _classnames["default"])(this.styles.dateRangePickerWrapper, this.props.className)
+        className: (0, _classnames["default"])(this.styles.dateRangePickerWrapper)
       }, /*#__PURE__*/_react["default"].createElement(_DefinedRange["default"], _extends({
         focusedRange: focusedRange,
         onPreviewChange: function onPreviewChange(value) {

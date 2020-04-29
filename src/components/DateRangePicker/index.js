@@ -17,11 +17,17 @@ class DateRangePicker extends Component {
     this.cancelFunc = props.cancelFunc ? props.cancelFunc : null;
   }
   onApply() {
+    console.log('onApplyPressed');
+    console.log(`applyfunc: ${this.applyFunc}`);
+    console.log(`state: ${this.state}`);
     if (this.applyFunc) {
       this.applyFunc();
     }
   }
   onCancel() {
+    console.log('onCancelPressed');
+    console.log(`cancelfunc: ${this.cancelFunc}`);
+    console.log(`state: ${this.state}`);
     if (this.cancelFunc) {
       this.cancelFunc();
     }
@@ -29,8 +35,8 @@ class DateRangePicker extends Component {
   render() {
     const { focusedRange } = this.state;
     return (
-      <div className="Container">
-        <div className={classnames(this.styles.dateRangePickerWrapper, this.props.className)}>
+      <div className={this.props.className}>
+        <div className={classnames(this.styles.dateRangePickerWrapper)}>
           <DefinedRange
             focusedRange={focusedRange}
             onPreviewChange={value => this.dateRange.updatePreview(value)}
