@@ -53,8 +53,8 @@ class DateRangePicker extends Component {
           />
         </div>
         <div className="buttons" style={{ float: 'right', margin: '10px' }}>
-          <button>Cancel</button>
-          <button>Apply</button>
+          <button onClick={this.onCancel}>Cancel</button>
+          <button onClick={this.onApply}>Apply</button>
         </div>
       </div>
     );

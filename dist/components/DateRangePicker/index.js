@@ -133,7 +133,11 @@ var DateRangePicker = /*#__PURE__*/function (_Component) {
           "float": 'right',
           margin: '10px'
         }
-      }, /*#__PURE__*/_react["default"].createElement("button", null, "Cancel"), /*#__PURE__*/_react["default"].createElement("button", null, "Apply")));
+      }, /*#__PURE__*/_react["default"].createElement("button", {
+        onClick: this.onCancel
+      }, "Cancel"), /*#__PURE__*/_react["default"].createElement("button", {
+        onClick: this.onApply
+      }, "Apply")));
     }
   }]);
 
